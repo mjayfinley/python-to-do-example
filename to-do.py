@@ -22,21 +22,22 @@ def add_task():
 
 
 def show_tasks():
-    number = 1
     for task in tasks:
-        print(f"{number}. " + task.get('title') + ' - ' + task.get('priority'))
-        number = number + 1
+        print(f"{tasks.index(task) + 1}. " +
+              task.get('title') + ' - ' + task.get('priority'))
 
 
 def delete_task():
     show_tasks()
 
-    delete_input = input(
-        'Enter task you would like to delete: ')
+    delete_input = int(input(
+        'Enter task number you would like to delete: '))
 
     for task in tasks:
-        if delete_input == task.get('title'):
+        if delete_input == (tasks.index(task) + 1):
             tasks.remove(task)
+        else:
+            print('Task does not exist')
 
 
 user_input = ''
