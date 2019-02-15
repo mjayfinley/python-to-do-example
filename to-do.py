@@ -52,3 +52,5 @@ while user_input != 'q':
         show_tasks()
     elif user_input == '3':
         delete_task()
+    else:
+        print("That is not an option.")
